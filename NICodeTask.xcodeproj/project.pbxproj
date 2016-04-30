@@ -240,6 +240,7 @@
 				04E90E6E1CD4FC9B0032D0AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
