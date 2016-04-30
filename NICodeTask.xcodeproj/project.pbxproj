@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04E90E691CD4FC9B0032D0AA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04E90E681CD4FC9B0032D0AA /* main.cpp */; };
+		04E90E711CD4FCE70032D0AA /* NiParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04E90E6F1CD4FCE70032D0AA /* NiParser.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		04E90E651CD4FC9B0032D0AA /* NICodeTask */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = NICodeTask; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E90E681CD4FC9B0032D0AA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		04E90E6F1CD4FCE70032D0AA /* NiParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NiParser.cpp; sourceTree = "<group>"; };
+		04E90E701CD4FCE70032D0AA /* NiParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NiParser.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				04E90E681CD4FC9B0032D0AA /* main.cpp */,
+				04E90E6F1CD4FCE70032D0AA /* NiParser.cpp */,
+				04E90E701CD4FCE70032D0AA /* NiParser.h */,
 			);
 			path = NICodeTask;
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04E90E711CD4FCE70032D0AA /* NiParser.cpp in Sources */,
 				04E90E691CD4FC9B0032D0AA /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -202,6 +208,7 @@
 		04E90E6D1CD4FC9B0032D0AA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -209,6 +216,7 @@
 		04E90E6E1CD4FC9B0032D0AA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
