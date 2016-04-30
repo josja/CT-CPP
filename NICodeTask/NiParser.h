@@ -15,14 +15,15 @@ class NiParser
 {
 public:
     // static functions
-    static unsigned long getNiCount(const char* text);
-    static unsigned long getNiCount(const wchar_t* text);
+    static unsigned long    getNiCount(const char* text);
+    static unsigned long    getNiCount(const wchar_t* text);
 
-    static unsigned long replaceNiWithNI(const char* text);
-    static unsigned long replaceNiWithNI(const wchar_t* text);
+    static const char*      replaceNiWithNI(const char* text);
+    static const wchar_t*   replaceNiWithNI(const wchar_t* text);
     
 private:
     template<typename T> static unsigned long countTwoCharNeedle(const T* text, unsigned long length, const T* needle);
+    template<typename T> static void replaceTwoCharNeedle(T* text, unsigned long length, const T* needle, const T* replacement);
 };
 
 #endif /* defined(__NICodeTask__NiTextParser__) */
