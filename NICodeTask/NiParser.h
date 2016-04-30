@@ -23,8 +23,8 @@ public:
     
 private:
     // Helper functions
-    template<typename T> static unsigned long   countTwoCharNeedle(const T* text, unsigned long length, const T* needle);
-    template<typename T> static void            replaceTwoCharNeedle(T* text, unsigned long length, const T* needle, const T* replacement);
+    template<typename T> static unsigned long   _countTwoCharNeedle(const T* text, unsigned long length, const T* needle);
+    template<typename T> static void            _replaceTwoCharNeedle(T* text, unsigned long length, const T* needle, const T* replacement);
 };
 
 #endif /* defined(__NICodeTask__NiTextParser__) */
