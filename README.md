@@ -2,7 +2,7 @@
 C++ Code Task
 
 Task template:
-
+```cpp
 class MyClass
 {
   public:
@@ -24,6 +24,7 @@ int main()
   // Invoke replaceNiWithNI(...) of class MyClass
   // Display on screen: "Found X occurrences of Ni. New string: Y"
 }
+```
 
 Task description:
 
