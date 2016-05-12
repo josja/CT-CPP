@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0439A8B81CD574DD00CAB456 /* NiParser_MT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0439A8B61CD574DD00CAB456 /* NiParser_MT.cpp */; };
 		04E90E691CD4FC9B0032D0AA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04E90E681CD4FC9B0032D0AA /* main.cpp */; };
 		04E90E711CD4FCE70032D0AA /* NiParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04E90E6F1CD4FCE70032D0AA /* NiParser.cpp */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0439A8B61CD574DD00CAB456 /* NiParser_MT.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NiParser_MT.cpp; sourceTree = "<group>"; };
+		0439A8B71CD574DD00CAB456 /* NiParser_MT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NiParser_MT.h; sourceTree = "<group>"; };
 		04E90E651CD4FC9B0032D0AA /* NICodeTask */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = NICodeTask; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E90E681CD4FC9B0032D0AA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		04E90E6F1CD4FCE70032D0AA /* NiParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NiParser.cpp; sourceTree = "<group>"; };
@@ -63,6 +66,8 @@
 				04E90E681CD4FC9B0032D0AA /* main.cpp */,
 				04E90E6F1CD4FCE70032D0AA /* NiParser.cpp */,
 				04E90E701CD4FCE70032D0AA /* NiParser.h */,
+				0439A8B61CD574DD00CAB456 /* NiParser_MT.cpp */,
+				0439A8B71CD574DD00CAB456 /* NiParser_MT.h */,
 			);
 			path = NICodeTask;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04E90E711CD4FCE70032D0AA /* NiParser.cpp in Sources */,
+				0439A8B81CD574DD00CAB456 /* NiParser_MT.cpp in Sources */,
 				04E90E691CD4FC9B0032D0AA /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

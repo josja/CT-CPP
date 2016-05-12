@@ -1,5 +1,5 @@
 //
-//  NiTextParser.h
+//  NiParser.h
 //  NICodeTask
 //
 //  Created by Joshua Krosenbrink on 30/04/16.

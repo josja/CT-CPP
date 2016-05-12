@@ -1,20 +1,27 @@
 //
-//  NiParser.cpp
+//  NiParser_MT.cpp
 //  NICodeTask
 //
 //  Created by Joshua Krosenbrink on 30/04/16.
 //  Copyright (c) 2016. All rights reserved.
 //
 
+#include <iostream>
 #include <cstring>
 #include <cwchar>
-#include "NiParser.h"
+#include "NiParser_MT.h"
+#include <thread>
 
+static const int num_threads = 10;
+
+void NiParser_MT::init() {
+    printf("hello");
+}
 
 // getNiCount(const char* text)
 // Returns the count of Ni's in ASCII string
 //
-unsigned long NiParser::getNiCount(const char* text) {
+unsigned long NiParser_MT::getNiCount(const char* text) {
     
     if (strlen(text) < 2) //< Don't do anything if the text can't contain "Ni"
         return 0;
@@ -27,11 +34,11 @@ unsigned long NiParser::getNiCount(const char* text) {
 // getNiCount(const wchar_t* text)
 // Returns the count of Ni's in Unicode string
 //
-unsigned long NiParser::getNiCount(const wchar_t* text) {
+unsigned long NiParser_MT::getNiCount(const wchar_t* text) {
     
     if (wcslen(text) < 2) //< Don't do anything if the text can't contain "Ni"
         return 0;
-
+    
     // Invoke generalized helper
     return _countTwoCharNeedle(text, wcslen(text), L"Ni");
 }
@@ -40,11 +47,11 @@ unsigned long NiParser::getNiCount(const wchar_t* text) {
 // replaceNiWithNI(const char* text)
 // Replaces  Ni's in ASCII string and returns the result
 //
-const char* NiParser::replaceNiWithNI(const char* text) {
+const char* NiParser_MT::replaceNiWithNI(const char* text) {
     
     if (strlen(text) < 2) //< Don't do anything if the text can't contain "Ni"
         return text;
-
+    
     unsigned short length = strlen(text);   //< Get ASCII text length
     char * output = new char[length];       //< Create an ASCII output buffer with same length that we can alter
     strcpy(output, text);                   //< Copy original text into output buffer
@@ -58,11 +65,11 @@ const char* NiParser::replaceNiWithNI(const char* text) {
 // replaceNiWithNI(const wchar_t* text)
 // Replaces Ni's in Unicode string and returns the result
 //
-const wchar_t* NiParser::replaceNiWithNI(const wchar_t* text) {
+const wchar_t* NiParser_MT::replaceNiWithNI(const wchar_t* text) {
     
     if (wcslen(text) < 2) //< Don't do anything if the text can't contain "Ni"
         return text;
-
+    
     unsigned short length = wcslen(text);   //< Get Unicode text length
     wchar_t * output = new wchar_t[length]; //< Create an Unicode output buffer with same length that we can alter
     wcscpy(output, text);                   //< Copy original text into output buffer
@@ -79,7 +86,9 @@ const wchar_t* NiParser::replaceNiWithNI(const wchar_t* text) {
 // Returns the count of occurences of the needle, for optimization reasons it only compares the first two chars
 //
 template<typename T>
-unsigned long NiParser::_countTwoCharNeedle(const T* text, unsigned long length, const T* needle) {
+unsigned long NiParser_MT::_countTwoCharNeedle(const T* text, unsigned long length, const T* needle) {
+    
+    std::cout << "Launched by thread " << text << std::endl;
     
     unsigned long count = 0; // Keep track of count
     
@@ -99,7 +108,7 @@ unsigned long NiParser::_countTwoCharNeedle(const T* text, unsigned long length,
 // Replaces the occurences of the first two chars of the needle with the first two chars of the replacement
 //
 template<typename T>
-void NiParser::_replaceTwoCharNeedle(T* text, unsigned long length, const T* needle, const T* replacement) {
+void NiParser_MT::_replaceTwoCharNeedle(T* text, unsigned long length, const T* needle, const T* replacement) {
     
     const T* end = text + (length-1); //< Calculate highest possible matching pointer for needle of length 2 ("Ni")
     while (text<end) {
